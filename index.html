@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="WorkSphere - India's cooperative-owned digital service marketplace connecting verified skilled workers from Labour Cooperative Federations with households and institutions.">
+  <meta name="keywords" content="cooperative services, skilled workers, household services, plumber, electrician, carpenter, labour cooperative">
+  <meta name="author" content="WorkSphere Cooperative Federation">
+  <title>WorkSphere — Cooperative Service Marketplace</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='15' fill='%237c3aed'/><text x='16' y='22' text-anchor='middle' fill='white' font-size='18'>W</text></svg>">
+</head>
+<body>
+  <!-- Background Mesh Animation -->
+  <div class="bg-mesh" id="bgMesh"></div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- ============================================
+       LANDING PAGE
+       ============================================ -->
+  <div class="landing-page" id="landingPage">
+
+    <!-- Navigation -->
+    <nav class="landing-nav" id="landingNav">
+      <div class="container">
+        <a href="#" class="logo" id="logoHome">
+          <div class="logo-icon">⚡</div>
+          <span>Work<span class="text-gradient">Sphere</span></span>
+        </a>
+        <div class="nav-links" id="navLinks">
+          <a href="#services-section" data-i18n="nav_services">Services</a>
+          <a href="#how-section" data-i18n="nav_how">How It Works</a>
+          <a href="#about-section" data-i18n="nav_about">About</a>
+          <a href="#contact-section" data-i18n="nav_contact">Contact</a>
+        </div>
+        <div class="nav-auth">
+          <!-- Language Switcher -->
+          <div class="lang-switcher">
+            <button class="lang-btn" id="langToggle">
+              🌐 <span id="currentLang">EN</span> ▾
+            </button>
+            <div class="lang-dropdown" id="langDropdown">
+              <button class="lang-option active" data-lang="en">🇬🇧 English</button>
+              <button class="lang-option" data-lang="hi">🇮🇳 हिन्दी</button>
+              <button class="lang-option" data-lang="ta">🇮🇳 தமிழ்</button>
+              <button class="lang-option" data-lang="te">🇮🇳 తెలుగు</button>
+              <button class="lang-option" data-lang="kn">🇮🇳 ಕನ್ನಡ</button>
+              <button class="lang-option" data-lang="bn">🇮🇳 বাংলা</button>
+              <button class="lang-option" data-lang="mr">🇮🇳 मराठी</button>
+            </div>
+          </div>
+          <button class="btn btn-secondary" id="btnLogin" data-i18n="nav_login">Log In</button>
+          <button class="btn btn-primary" id="btnSignup" data-i18n="nav_signup">Join Now</button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <div class="hero-badge">
+              <span class="pulse-dot"></span>
+              <span data-i18n="hero_badge">Cooperative-Owned Platform</span>
+            </div>
+            <h1 id="heroTitle"><span data-i18n="hero_title_1">Skilled Workers,</span> <span class="text-gradient" data-i18n="hero_title_2">Trusted Services,</span> <span data-i18n="hero_title_3">Fair Wages</span></h1>
+            <p data-i18n="hero_desc">Connecting verified workers from Labour Cooperative Federations with households and institutions. Fair wages, worker welfare, and quality service — all on one platform.</p>
+            <div class="hero-actions">
+              <button class="btn btn-primary btn-lg" id="heroBookBtn" data-i18n="hero_book">📋 Book a Service</button>
+              <button class="btn btn-secondary btn-lg" id="heroJoinBtn" data-i18n="hero_join">👷 Join as Worker</button>
+            </div>
+            <div class="hero-stats">
+              <div class="hero-stat">
+                <h3>12,500+</h3>
+                <p data-i18n="stat_workers">Verified Workers</p>
+              </div>
+              <div class="hero-stat">
+                <h3>85,000+</h3>
+                <p data-i18n="stat_services">Services Completed</p>
+              </div>
+              <div class="hero-stat">
+                <h3>4.8★</h3>
+                <p data-i18n="stat_rating">Average Rating</p>
+              </div>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="hero-globe">
+              <div class="float-icon" title="Electrician">⚡</div>
+              <div class="float-icon" title="Plumber">🔧</div>
+              <div class="float-icon" title="Carpenter">🪚</div>
+              <div class="float-icon" title="Painter">🎨</div>
+              <div class="float-icon" title="Cleaner">🧹</div>
+              <div class="float-icon" title="Driver">🚗</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section" id="services-section">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <div class="label">✦ <span data-i18n="services_label">Our Services</span></div>
+          <h2 data-i18n="services_title">Every Service <span class="text-gradient">Your Home Needs</span></h2>
+          <p data-i18n="services_desc">From emergency repairs to daily household help — all provided by verified cooperative workers</p>
+        </div>
+        <div class="services-grid" id="servicesGrid">
+          <!-- Populated by JS -->
+        </div>
+        <!-- Emergency Banner -->
+        <div class="emergency-banner animate-on-scroll">
+          <div>
+            <h3>🚨 <span data-i18n="emergency_title">Need Emergency Service?</span></h3>
+            <p data-i18n="emergency_desc">Get immediate help from nearby workers — available 24/7 for urgent repairs and emergencies</p>
+          </div>
+          <button class="btn btn-emergency btn-lg" id="emergencyLandingBtn" data-i18n="emergency_btn">⚡ Emergency Booking</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="section" id="how-section">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <div class="label">✦ <span data-i18n="how_label">Simple Process</span></div>
+          <h2 data-i18n="how_title">How <span class="text-gradient">WorkSphere</span> Works</h2>
+          <p data-i18n="how_desc">Book verified cooperative workers in just four simple steps</p>
+        </div>
+        <div class="how-steps animate-on-scroll">
+          <div class="how-step">
+            <div class="step-number">1</div>
+            <h3 data-i18n="step1_title">Choose Service</h3>
+            <p data-i18n="step1_desc">Select from our wide range of household and community services</p>
+          </div>
+          <div class="how-step">
+            <div class="step-number">2</div>
+            <h3 data-i18n="step2_title">Pick a Worker</h3>
+            <p data-i18n="step2_desc">Browse verified worker profiles with ratings and certifications</p>
+          </div>
+          <div class="how-step">
+            <div class="step-number">3</div>
+            <h3 data-i18n="step3_title">Schedule & Pay</h3>
+            <p data-i18n="step3_desc">Book a convenient time and pay securely through digital payment</p>
+          </div>
+          <div class="how-step">
+            <div class="step-number">4</div>
+            <h3 data-i18n="step4_title">Get Service</h3>
+            <p data-i18n="step4_desc">Verified worker arrives at your door — rate and review after completion</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section stats-section" id="about-section">
+      <div class="container">
+        <div class="stats-grid animate-on-scroll">
+          <div class="stat-card">
+            <div class="stat-value" data-target="350">0</div>
+            <div class="stat-label" data-i18n="stats_coops">Cooperative Societies</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" data-target="12500">0</div>
+            <div class="stat-label" data-i18n="stats_workers">Registered Workers</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" data-target="85000">0</div>
+            <div class="stat-label" data-i18n="stats_completed">Services Completed</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" data-target="28">0</div>
+            <div class="stat-label" data-i18n="stats_states">States Covered</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section" id="testimonials-section">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <div class="label">✦ <span data-i18n="test_label">Testimonials</span></div>
+          <h2 data-i18n="test_title">What People <span class="text-gradient">Say About Us</span></h2>
+        </div>
+        <div class="testimonials-track animate-on-scroll" id="testimonialsTrack">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact-section">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="logo">
+              <div class="logo-icon">⚡</div>
+              <span>Work<span class="text-gradient">Sphere</span></span>
+            </div>
+            <p data-i18n="footer_desc">A cooperative-owned digital service marketplace empowering skilled workers with fair wages, welfare, and dignity. Built by cooperatives, for the community.</p>
+          </div>
+          <div>
+            <h4 data-i18n="footer_services">Services</h4>
+            <ul>
+              <li><a href="#" data-i18n="svc_electrical">Electrical Work</a></li>
+              <li><a href="#" data-i18n="svc_plumbing">Plumbing</a></li>
+              <li><a href="#" data-i18n="svc_carpentry">Carpentry</a></li>
+              <li><a href="#" data-i18n="svc_painting">Painting</a></li>
+              <li><a href="#" data-i18n="svc_cleaning">Cleaning</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 data-i18n="footer_company">Company</h4>
+            <ul>
+              <li><a href="#" data-i18n="link_about">About Us</a></li>
+              <li><a href="#" data-i18n="link_careers">Careers</a></li>
+              <li><a href="#" data-i18n="link_partner">Partner With Us</a></li>
+              <li><a href="#" data-i18n="link_blog">Blog</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 data-i18n="footer_support">Support</h4>
+            <ul>
+              <li><a href="#" data-i18n="link_help">Help Center</a></li>
+              <li><a href="#" data-i18n="link_safety">Safety</a></li>
+              <li><a href="#" data-i18n="link_terms">Terms of Service</a></li>
+              <li><a href="#" data-i18n="link_privacy">Privacy Policy</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 WorkSphere Cooperative Federation. All rights reserved.</span>
+          <span data-i18n="footer_made">Made with ❤️ for cooperative workers</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ============================================
+       AUTH MODAL
+       ============================================ -->
+  <div class="modal-overlay" id="authModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 id="authModalTitle">Welcome to WorkSphere</h2>
+        <button class="modal-close" onclick="closeModal('authModal')">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="auth-tabs">
+          <button class="auth-tab active" id="tabLogin" onclick="switchAuthTab('login')" data-i18n="auth_login">Log In</button>
+          <button class="auth-tab" id="tabSignup" onclick="switchAuthTab('signup')" data-i18n="auth_signup">Sign Up</button>
+        </div>
+
+        <!-- Login Form -->
+        <div id="loginForm">
+          <div class="form-group">
+            <label data-i18n="auth_phone">Phone Number / Email <span class="required">*</span></label>
+            <input type="text" class="form-input" id="loginPhone" placeholder="Enter phone or email">
+          </div>
+          <div class="form-group">
+            <label data-i18n="auth_password">Password <span class="required">*</span></label>
+            <input type="password" class="form-input" id="loginPassword" placeholder="Enter password">
+          </div>
+          <button class="btn btn-primary btn-lg" style="width:100%" onclick="handleLogin()" data-i18n="auth_login_btn">Log In</button>
+        </div>
+
+        <!-- Signup Form -->
+        <div id="signupForm" class="hidden">
+          <div class="role-selector" id="roleSelector">
+            <div class="role-option selected" data-role="customer" onclick="selectRole('customer')">
+              <div class="icon">🏠</div>
+              <h4 data-i18n="role_customer">Customer</h4>
+              <p data-i18n="role_customer_desc">Book services</p>
+            </div>
+            <div class="role-option" data-role="worker" onclick="selectRole('worker')">
+              <div class="icon">👷</div>
+              <h4 data-i18n="role_worker">Worker</h4>
+              <p data-i18n="role_worker_desc">Provide services</p>
+            </div>
+            <div class="role-option" data-role="admin" onclick="selectRole('admin')">
+              <div class="icon">🏛️</div>
+              <h4 data-i18n="role_admin">Federation</h4>
+              <p data-i18n="role_admin_desc">Manage cooperative</p>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Full Name <span class="required">*</span></label>
+            <input type="text" class="form-input" id="signupName" placeholder="Enter your full name">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Phone <span class="required">*</span></label>
+              <input type="tel" class="form-input" id="signupPhone" placeholder="+91 XXXXX XXXXX">
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" class="form-input" id="signupEmail" placeholder="your@email.com">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Password <span class="required">*</span></label>
+            <input type="password" class="form-input" id="signupPassword" placeholder="Create a strong password">
+          </div>
+          <button class="btn btn-primary btn-lg" style="width:100%" onclick="handleSignup()" data-i18n="auth_signup_btn">Create Account</button>
+        </div>
+
+        <div class="auth-divider">or continue with</div>
+        <div style="display:flex;gap:var(--space-md)">
+          <button class="btn btn-secondary" style="flex:1" onclick="handleDemoLogin('customer')">🏠 Demo Customer</button>
+          <button class="btn btn-secondary" style="flex:1" onclick="handleDemoLogin('worker')">👷 Demo Worker</button>
+          <button class="btn btn-secondary" style="flex:1" onclick="handleDemoLogin('admin')">🏛️ Demo Admin</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================
+       BOOKING MODAL
+       ============================================ -->
+  <div class="modal-overlay" id="bookingModal">
+    <div class="modal" style="max-width:640px">
+      <div class="modal-header">
+        <h2>📋 Book Service</h2>
+        <button class="modal-close" onclick="closeModal('bookingModal')">✕</button>
+      </div>
+      <div class="modal-body">
+        <!-- Step Progress -->
+        <div class="step-progress" id="bookingProgress">
+          <div class="step-dot active" data-step="1">1</div>
+          <div class="step-line"></div>
+          <div class="step-dot" data-step="2">2</div>
+          <div class="step-line"></div>
+          <div class="step-dot" data-step="3">3</div>
+          <div class="step-line"></div>
+          <div class="step-dot" data-step="4">4</div>
+        </div>
+
+        <!-- Step 1: Service Details -->
+        <div class="form-step active" id="bookingStep1">
+          <h3 style="margin-bottom:var(--space-lg)">Service Details</h3>
+          <div class="form-group">
+            <label>Service Type <span class="required">*</span></label>
+            <select class="form-input" id="bookingService">
+              <option value="">Select a service</option>
+              <option value="electrical">⚡ Electrical Work</option>
+              <option value="plumbing">🔧 Plumbing</option>
+              <option value="carpentry">🪚 Carpentry</option>
+              <option value="painting">🎨 Painting</option>
+              <option value="cleaning">🧹 Cleaning</option>
+              <option value="gardening">🌿 Gardening</option>
+              <option value="driving">🚗 Driving</option>
+              <option value="caregiving">❤️ Caregiving</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Description <span class="required">*</span></label>
+            <textarea class="form-input" id="bookingDesc" placeholder="Describe the work needed..."></textarea>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Date <span class="required">*</span></label>
+              <input type="date" class="form-input" id="bookingDate">
+            </div>
+            <div class="form-group">
+              <label>Preferred Time <span class="required">*</span></label>
+              <select class="form-input" id="bookingTime">
+                <option value="morning">🌅 Morning (8AM - 12PM)</option>
+                <option value="afternoon">☀️ Afternoon (12PM - 4PM)</option>
+                <option value="evening">🌆 Evening (4PM - 8PM)</option>
+              </select>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-lg" style="width:100%" onclick="nextBookingStep(2)">Continue →</button>
+        </div>
+
+        <!-- Step 2: Location -->
+        <div class="form-step" id="bookingStep2">
+          <h3 style="margin-bottom:var(--space-lg)">📍 Your Location</h3>
+          <div class="map-container" style="height:200px;margin-bottom:var(--space-lg)">
+            <div class="map-placeholder">
+              <div class="map-grid-lines"></div>
+              <div class="map-pin" style="top:40%;left:50%">
+                <span class="pin-label">Your Location</span>
+              </div>
+              <div class="map-overlay-info">
+                <h4>📍 Detecting location...</h4>
+                <p>Bangalore, Karnataka</p>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Full Address <span class="required">*</span></label>
+            <textarea class="form-input" id="bookingAddress" placeholder="Enter your full address" style="min-height:60px"></textarea>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>City</label>
+              <input type="text" class="form-input" id="bookingCity" placeholder="City" value="Bangalore">
+            </div>
+            <div class="form-group">
+              <label>PIN Code</label>
+              <input type="text" class="form-input" id="bookingPin" placeholder="560001">
+            </div>
+          </div>
+          <div style="display:flex;gap:var(--space-md)">
+            <button class="btn btn-secondary btn-lg" style="flex:1" onclick="nextBookingStep(1)">← Back</button>
+            <button class="btn btn-primary btn-lg" style="flex:1" onclick="nextBookingStep(3)">Continue →</button>
+          </div>
+        </div>
+
+        <!-- Step 3: Payment -->
+        <div class="form-step" id="bookingStep3">
+          <h3 style="margin-bottom:var(--space-lg)">💳 Payment</h3>
+          <div class="payment-methods">
+            <div class="payment-method selected" onclick="selectPayment(this)">
+              <div class="icon">📱</div>
+              <h4>UPI</h4>
+            </div>
+            <div class="payment-method" onclick="selectPayment(this)">
+              <div class="icon">💳</div>
+              <h4>Card</h4>
+            </div>
+            <div class="payment-method" onclick="selectPayment(this)">
+              <div class="icon">💰</div>
+              <h4>Cash</h4>
+            </div>
+          </div>
+          <div class="invoice-card">
+            <h4 style="margin-bottom:var(--space-md)">Invoice Preview</h4>
+            <div class="invoice-row">
+              <span class="label">Service Charge</span>
+              <span>₹499.00</span>
+            </div>
+            <div class="invoice-row">
+              <span class="label">Platform Fee</span>
+              <span>₹29.00</span>
+            </div>
+            <div class="invoice-row">
+              <span class="label">GST (18%)</span>
+              <span>₹95.04</span>
+            </div>
+            <div class="invoice-row">
+              <span class="label" style="color:var(--accent-secondary)">Cooperative Discount</span>
+              <span style="color:var(--accent-secondary)">-₹50.00</span>
+            </div>
+            <div class="invoice-row total">
+              <span>Total</span>
+              <span style="color:var(--accent-secondary)">₹573.04</span>
+            </div>
+          </div>
+          <div style="display:flex;gap:var(--space-md);margin-top:var(--space-lg)">
+            <button class="btn btn-secondary btn-lg" style="flex:1" onclick="nextBookingStep(2)">← Back</button>
+            <button class="btn btn-primary btn-lg" style="flex:1" onclick="nextBookingStep(4)">Confirm & Pay →</button>
+          </div>
+        </div>
+
+        <!-- Step 4: Confirmation -->
+        <div class="form-step" id="bookingStep4">
+          <div class="booking-success">
+            <div class="success-check">✅</div>
+            <h2 style="font-family:var(--font-display);margin-bottom:var(--space-md)">Booking Confirmed!</h2>
+            <p style="color:var(--text-secondary);margin-bottom:var(--space-md)">Your booking has been placed successfully. A verified worker will be assigned shortly.</p>
+            <p style="font-size:0.85rem;color:var(--text-muted)">Booking ID: <strong style="color:var(--accent-primary-light)">WS-2026-78542</strong></p>
+            <div style="margin-top:var(--space-xl)">
+              <button class="btn btn-primary btn-lg" onclick="closeModal('bookingModal');showToast('Booking confirmed! Track your booking in the dashboard.','success')">View Dashboard</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================
+       APP LAYOUT (Post-Login)
+       ============================================ -->
+  <div class="app-layout" id="appLayout">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">
+          <div class="logo-icon" style="width:32px;height:32px;font-size:1rem;border-radius:8px">⚡</div>
+          <span style="font-size:1.1rem">Work<span class="text-gradient">Sphere</span></span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <!-- Main Nav -->
+        <div class="sidebar-nav-section">
+          <div class="section-label">Main</div>
+          <button class="nav-item active" data-page="dashboard" onclick="switchPage('dashboard')">
+            <span class="nav-icon">📊</span> Dashboard
+          </button>
+          <button class="nav-item" data-page="services" onclick="switchPage('services')">
+            <span class="nav-icon">🔍</span> Browse Services
+          </button>
+          <button class="nav-item" data-page="bookings" onclick="switchPage('bookings')">
+            <span class="nav-icon">📋</span> My Bookings
+            <span class="badge">3</span>
+          </button>
+          <button class="nav-item" data-page="emergency" onclick="switchPage('emergency')">
+            <span class="nav-icon">🚨</span> Emergency
+          </button>
+        </div>
+
+        <!-- Worker Section -->
+        <div class="sidebar-nav-section" id="workerNavSection">
+          <div class="section-label">Worker</div>
+          <button class="nav-item" data-page="worker-dashboard" onclick="switchPage('worker-dashboard')">
+            <span class="nav-icon">💼</span> My Work
+          </button>
+          <button class="nav-item" data-page="earnings" onclick="switchPage('earnings')">
+            <span class="nav-icon">💰</span> Earnings
+          </button>
+          <button class="nav-item" data-page="welfare" onclick="switchPage('welfare')">
+            <span class="nav-icon">🛡️</span> Welfare
+          </button>
+          <button class="nav-item" data-page="registration" onclick="switchPage('registration')">
+            <span class="nav-icon">📝</span> Registration
+          </button>
+        </div>
+
+        <!-- Admin Section -->
+        <div class="sidebar-nav-section" id="adminNavSection">
+          <div class="section-label">Federation Admin</div>
+          <button class="nav-item" data-page="admin" onclick="switchPage('admin')">
+            <span class="nav-icon">🏛️</span> Admin Panel
+          </button>
+          <button class="nav-item" data-page="workers-mgmt" onclick="switchPage('workers-mgmt')">
+            <span class="nav-icon">👥</span> Workers
+            <span class="badge">5</span>
+          </button>
+          <button class="nav-item" data-page="ai-forecast" onclick="switchPage('ai-forecast')">
+            <span class="nav-icon">🤖</span> AI Forecast
+          </button>
+          <button class="nav-item" data-page="reports" onclick="switchPage('reports')">
+            <span class="nav-icon">📈</span> Reports
+          </button>
+        </div>
+
+        <!-- General -->
+        <div class="sidebar-nav-section">
+          <div class="section-label">General</div>
+          <button class="nav-item" data-page="ratings" onclick="switchPage('ratings')">
+            <span class="nav-icon">⭐</span> Reviews
+          </button>
+          <button class="nav-item" data-page="map-view" onclick="switchPage('map-view')">
+            <span class="nav-icon">🗺️</span> Map View
+          </button>
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="sidebar-user" id="sidebarUser">
+          <div class="sidebar-user-avatar" id="userAvatar">RS</div>
+          <div class="sidebar-user-info">
+            <h4 id="userName">Rajesh S.</h4>
+            <p id="userRole">Customer</p>
+          </div>
+        </div>
+        <button class="btn btn-secondary btn-sm" style="width:100%;margin-top:var(--space-sm)" onclick="handleLogout()">🚪 Log Out</button>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <!-- Top Bar -->
+      <div class="top-bar">
+        <div class="top-bar-left">
+          <h2 id="pageTitle">Dashboard</h2>
+        </div>
+        <div class="top-bar-right">
+          <div class="top-bar-search">
+            <span>🔍</span>
+            <input type="text" placeholder="Search services, workers..." id="globalSearch">
+          </div>
+          <button class="notification-btn" title="Notifications">
+            🔔
+            <span class="dot"></span>
+          </button>
+          <div class="lang-switcher">
+            <button class="lang-btn" id="appLangToggle">
+              🌐 <span id="appCurrentLang">EN</span> ▾
+            </button>
+            <div class="lang-dropdown" id="appLangDropdown">
+              <button class="lang-option active" data-lang="en">🇬🇧 English</button>
+              <button class="lang-option" data-lang="hi">🇮🇳 हिन्दी</button>
+              <button class="lang-option" data-lang="ta">🇮🇳 தமிழ்</button>
+              <button class="lang-option" data-lang="te">🇮🇳 తెలుగు</button>
+              <button class="lang-option" data-lang="kn">🇮🇳 ಕನ್ನಡ</button>
+              <button class="lang-option" data-lang="bn">🇮🇳 বাংলা</button>
+              <button class="lang-option" data-lang="mr">🇮🇳 मराठी</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Page Content -->
+      <div class="page-content">
+
+        <!-- ====== DASHBOARD PAGE ====== -->
+        <div class="page-view active" id="page-dashboard">
+          <div class="dashboard-cards" id="dashboardCards">
+            <!-- Populated by JS -->
+          </div>
+          <div class="chart-row">
+            <div class="chart-container">
+              <div class="chart-header">
+                <h3>📈 Bookings Overview</h3>
+                <div style="display:flex;gap:var(--space-sm)">
+                  <button class="filter-chip active" onclick="setChartPeriod(this,'week')">Week</button>
+                  <button class="filter-chip" onclick="setChartPeriod(this,'month')">Month</button>
+                  <button class="filter-chip" onclick="setChartPeriod(this,'year')">Year</button>
+                </div>
+              </div>
+              <canvas class="chart-canvas" id="bookingsChart"></canvas>
+            </div>
+            <div class="chart-container">
+              <div class="chart-header">
+                <h3>🎯 Service Distribution</h3>
+              </div>
+              <canvas class="chart-canvas" id="distributionChart"></canvas>
+            </div>
+          </div>
+          <!-- Recent Bookings Table -->
+          <div class="data-table-container">
+            <div class="table-header">
+              <h3>📋 Recent Bookings</h3>
+              <button class="btn btn-sm btn-outline" onclick="openBookingModal()">+ New Booking</button>
+            </div>
+            <table class="data-table" id="recentBookingsTable">
+              <thead>
+                <tr>
+                  <th>Booking ID</th>
+                  <th>Service</th>
+                  <th>Worker</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                  <th>Amount</th>
+                </tr>
+              </thead>
+              <tbody id="recentBookingsBody">
+                <!-- Populated by JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- ====== BROWSE SERVICES PAGE ====== -->
+        <div class="page-view" id="page-services">
+          <div class="services-filters" id="serviceFilters">
+            <button class="filter-chip active" onclick="filterServices(this,'all')">All Services</button>
+            <button class="filter-chip" onclick="filterServices(this,'electrical')">⚡ Electrical</button>
+            <button class="filter-chip" onclick="filterServices(this,'plumbing')">🔧 Plumbing</button>
+            <button class="filter-chip" onclick="filterServices(this,'carpentry')">🪚 Carpentry</button>
+            <button class="filter-chip" onclick="filterServices(this,'painting')">🎨 Painting</button>
+            <button class="filter-chip" onclick="filterServices(this,'cleaning')">🧹 Cleaning</button>
+            <button class="filter-chip" onclick="filterServices(this,'gardening')">🌿 Gardening</button>
+            <button class="filter-chip" onclick="filterServices(this,'caregiving')">❤️ Caregiving</button>
+            <button class="filter-chip" onclick="filterServices(this,'driving')">🚗 Driving</button>
+          </div>
+          <!-- Geo-Location Map -->
+          <div class="map-container" style="margin-bottom:var(--space-xl)" id="servicesMap">
+            <div class="map-placeholder">
+              <div class="map-grid-lines"></div>
+              <div class="map-pin worker-pin" style="top:30%;left:25%"><span class="pin-label">Suresh K. - Electrician</span></div>
+              <div class="map-pin worker-pin" style="top:55%;left:40%"><span class="pin-label">Priya M. - Cleaner</span></div>
+              <div class="map-pin worker-pin" style="top:25%;left:65%"><span class="pin-label">Ravi T. - Plumber</span></div>
+              <div class="map-pin worker-pin" style="top:60%;left:75%"><span class="pin-label">Meena S. - Caregiver</span></div>
+              <div class="map-pin worker-pin" style="top:45%;left:50%"><span class="pin-label">Kumar D. - Carpenter</span></div>
+              <div class="map-pin" style="top:50%;left:48%"><span class="pin-label">📍 Your Location</span></div>
+              <div class="map-overlay-info">
+                <h4>🗺️ Nearby Workers</h4>
+                <p>5 workers within 5km radius</p>
+              </div>
+            </div>
+          </div>
+          <!-- Worker Cards -->
+          <div class="worker-cards-grid" id="workerCardsGrid">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+
+        <!-- ====== BOOKINGS PAGE ====== -->
+        <div class="page-view" id="page-bookings">
+          <div class="services-filters">
+            <button class="filter-chip active">All</button>
+            <button class="filter-chip">Active</button>
+            <button class="filter-chip">Completed</button>
+            <button class="filter-chip">Pending</button>
+            <button class="filter-chip">Cancelled</button>
+          </div>
+          <div class="data-table-container">
+            <div class="table-header">
+              <h3>My Bookings</h3>
+              <button class="btn btn-sm btn-primary" onclick="openBookingModal()">+ New Booking</button>
+            </div>
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Booking ID</th>
+                  <th>Service</th>
+                  <th>Worker</th>
+                  <th>Scheduled</th>
+                  <th>Status</th>
+                  <th>Amount</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="allBookingsBody">
+                <!-- Populated by JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- ====== EMERGENCY PAGE ====== -->
+        <div class="page-view" id="page-emergency">
+          <div class="emergency-page">
+            <div class="emergency-icon">🚨</div>
+            <h2>Emergency Service Booking</h2>
+            <p>Select the type of emergency service you need. We'll connect you with the nearest available worker within minutes.</p>
+            <div class="emergency-services" id="emergencyServices">
+              <div class="emergency-service-btn" onclick="bookEmergency('electrical')">
+                <div class="icon">⚡</div>
+                <h4>Electrical Emergency</h4>
+                <p>Short circuit, power failure, sparks</p>
+              </div>
+              <div class="emergency-service-btn" onclick="bookEmergency('plumbing')">
+                <div class="icon">🔧</div>
+                <h4>Plumbing Emergency</h4>
+                <p>Pipe burst, flooding, leaks</p>
+              </div>
+              <div class="emergency-service-btn" onclick="bookEmergency('locksmith')">
+                <div class="icon">🔑</div>
+                <h4>Locksmith</h4>
+                <p>Locked out, broken lock</p>
+              </div>
+              <div class="emergency-service-btn" onclick="bookEmergency('appliance')">
+                <div class="icon">🔌</div>
+                <h4>Appliance Repair</h4>
+                <p>AC, refrigerator, washing machine</p>
+              </div>
+            </div>
+            <div class="map-container" style="height:250px">
+              <div class="map-placeholder">
+                <div class="map-grid-lines"></div>
+                <div class="map-pin" style="top:50%;left:50%"><span class="pin-label">📍 You</span></div>
+                <div class="map-pin worker-pin" style="top:35%;left:35%;animation:floatBounce 1.5s ease-in-out infinite"><span class="pin-label">⚡ 2.1km away</span></div>
+                <div class="map-pin worker-pin" style="top:60%;left:65%;animation:floatBounce 1.5s ease-in-out infinite 0.5s"><span class="pin-label">⚡ 3.4km away</span></div>
+                <div class="map-overlay-info">
+                  <h4>🚨 Emergency Mode</h4>
+                  <p>Avg. response time: 15 min</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ====== WORKER DASHBOARD PAGE ====== -->
+        <div class="page-view" id="page-worker-dashboard">
+          <div class="earnings-cards">
+            <div class="earning-card">
+              <div class="label">Today's Earnings</div>
+              <div class="value" style="color:var(--accent-secondary)">₹2,450</div>
+              <div class="trend up">↑ 18% from yesterday</div>
+            </div>
+            <div class="earning-card">
+              <div class="label">Jobs Completed Today</div>
+              <div class="value">4</div>
+              <div class="trend up">↑ 2 more than average</div>
+            </div>
+            <div class="earning-card">
+              <div class="label">Rating</div>
+              <div class="value" style="color:var(--accent-warning)">4.9 ★</div>
+              <div class="trend up">Top 5% worker</div>
+            </div>
+          </div>
+
+          <h3 style="margin-bottom:var(--space-lg)">📅 Today's Schedule</h3>
+          <div class="schedule-timeline" id="workerSchedule">
+            <div class="schedule-item">
+              <div class="schedule-time">
+                <div class="time">9:00</div>
+                <div class="period">AM</div>
+              </div>
+              <div class="schedule-details" style="flex:1">
+                <h4>⚡ Electrical Wiring — Mrs. Lakshmi</h4>
+                <p>📍 Koramangala, Bangalore • ₹850</p>
+              </div>
+              <span class="status-badge completed">Completed</span>
+            </div>
+            <div class="schedule-item">
+              <div class="schedule-time">
+                <div class="time">11:30</div>
+                <div class="period">AM</div>
+              </div>
+              <div class="schedule-details" style="flex:1">
+                <h4>⚡ Fan Installation — Mr. Sharma</h4>
+                <p>📍 Indiranagar, Bangalore • ₹600</p>
+              </div>
+              <span class="status-badge completed">Completed</span>
+            </div>
+            <div class="schedule-item" style="border-color:var(--accent-primary)">
+              <div class="schedule-time">
+                <div class="time">2:00</div>
+                <div class="period">PM</div>
+              </div>
+              <div class="schedule-details" style="flex:1">
+                <h4>⚡ MCB Repair — Tech Park Office</h4>
+                <p>📍 Whitefield, Bangalore • ₹1,200</p>
+              </div>
+              <span class="status-badge in-progress">In Progress</span>
+            </div>
+            <div class="schedule-item">
+              <div class="schedule-time">
+                <div class="time">5:00</div>
+                <div class="period">PM</div>
+              </div>
+              <div class="schedule-details" style="flex:1">
+                <h4>⚡ Switch Board Repair — Dr. Reddy</h4>
+                <p>📍 HSR Layout, Bangalore • ₹450</p>
+              </div>
+              <span class="status-badge pending">Upcoming</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ====== EARNINGS PAGE ====== -->
+        <div class="page-view" id="page-earnings">
+          <div class="dashboard-cards">
+            <div class="dash-card">
+              <div class="dash-card-header">
+                <div class="dash-card-icon green">💰</div>
+              </div>
+              <div class="value" style="color:var(--accent-secondary)">₹48,750</div>
+              <div class="label">This Month</div>
+              <div class="trend up">↑ 22% from last month</div>
+            </div>
+            <div class="dash-card">
+              <div class="dash-card-header">
+                <div class="dash-card-icon purple">📊</div>
+              </div>
+              <div class="value">₹3,85,200</div>
+              <div class="label">Total Earnings</div>
+            </div>
+            <div class="dash-card">
+              <div class="dash-card-header">
+                <div class="dash-card-icon blue">📋</div>
+              </div>
+              <div class="value">156</div>
+              <div class="label">Jobs Completed</div>
+            </div>
+            <div class="dash-card">
+              <div class="dash-card-header">
+                <div class="dash-card-icon yellow">⭐</div>
+              </div>
+              <div class="value" style="color:var(--accent-warning)">4.9</div>
+              <div class="label">Average Rating</div>
+            </div>
+          </div>
+          <div class="chart-container" style="margin-bottom:var(--space-xl)">
+            <div class="chart-header">
+              <h3>💰 Earnings Trend</h3>
+            </div>
+            <canvas class="chart-canvas" id="earningsChart"></canvas>
+          </div>
+          <div class="data-table-container">
+            <div class="table-header">
+              <h3>Recent Transactions</h3>
+            </div>
+            <table class="data-table">
+              <thead>
+                <tr><th>Date</th><th>Service</th><th>Customer</th><th>Amount</th><th>Status</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>25 Sep 2026</td><td>⚡ Electrical Wiring</td><td>Mrs. Lakshmi</td><td style="color:var(--accent-secondary)">₹850</td><td><span class="status-badge completed">Paid</span></td></tr>
+                <tr><td>25 Sep 2026</td><td>⚡ Fan Installation</td><td>Mr. Sharma</td><td style="color:var(--accent-secondary)">₹600</td><td><span class="status-badge completed">Paid</span></td></tr>
+                <tr><td>24 Sep 2026</td><td>⚡ Full House Wiring</td><td>Apartment Complex</td><td style="color:var(--accent-secondary)">₹4,500</td><td><span class="status-badge completed">Paid</span></td></tr>
+                <tr><td>24 Sep 2026</td><td>⚡ MCB Installation</td><td>Mr. Patel</td><td style="color:var(--accent-secondary)">₹1,200</td><td><span class="status-badge completed">Paid</span></td></tr>
+                <tr><td>23 Sep 2026</td><td>⚡ Inverter Setup</td><td>Mrs. Gupta</td><td style="color:var(--accent-warning)">₹2,000</td><td><span class="status-badge pending">Pending</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- ====== WELFARE PAGE ====== -->
+        <div class="page-view" id="page-welfare">
+          <div class="welfare-cards">
+            <div class="welfare-card">
+              <div class="welfare-card-header">
+                <div class="icon" style="background:rgba(6,214,160,0.15);border-radius:var(--radius-md)">🏥</div>
+                <h3>Health Insurance</h3>
+              </div>
+              <div class="welfare-detail"><span class="label">Provider</span><span class="value">ESIC</span></div>
+              <div class="welfare-detail"><span class="label">Policy No.</span><span class="value">ESI-2026-78421</span></div>
+              <div class="welfare-detail"><span class="label">Coverage</span><span class="value" style="color:var(--accent-secondary)">₹5,00,000</span></div>
+              <div class="welfare-detail"><span class="label">Valid Until</span><span class="value">31 Mar 2027</span></div>
+              <div class="welfare-detail"><span class="label">Status</span><span class="value"><span class="status-badge active">Active</span></span></div>
+            </div>
+            <div class="welfare-card">
+              <div class="welfare-card-header">
+                <div class="icon" style="background:rgba(124,58,237,0.15);border-radius:var(--radius-md)">🏦</div>
+                <h3>Provident Fund</h3>
+              </div>
+              <div class="welfare-detail"><span class="label">PF Account</span><span class="value">PF-KA-0078421</span></div>
+              <div class="welfare-detail"><span class="label">Balance</span><span class="value" style="color:var(--accent-secondary)">₹1,24,500</span></div>
+              <div class="welfare-detail"><span class="label">Monthly Contribution</span><span class="value">₹1,800</span></div>
+              <div class="welfare-detail"><span class="label">Employer Match</span><span class="value">₹1,800</span></div>
+            </div>
+            <div class="welfare-card">
+              <div class="welfare-card-header">
+                <div class="icon" style="background:rgba(251,191,36,0.15);border-radius:var(--radius-md)">📚</div>
+                <h3>Skill Development</h3>
+              </div>
+              <div class="welfare-detail"><span class="label">Certifications</span><span class="value">3 Completed</span></div>
+              <div class="welfare-detail"><span class="label">Current Course</span><span class="value" style="color:var(--accent-primary-light)">Advanced Wiring</span></div>
+              <div class="welfare-detail"><span class="label">Progress</span><span class="value">68%</span></div>
+              <div class="progress-bar"><div class="progress-fill" style="width:68%"></div></div>
+              <div class="welfare-detail"><span class="label">Training Hours</span><span class="value">120 hrs</span></div>
+            </div>
+            <div class="welfare-card">
+              <div class="welfare-card-header">
+                <div class="icon" style="background:rgba(247,37,133,0.15);border-radius:var(--radius-md)">🛡️</div>
+                <h3>Accident Insurance</h3>
+              </div>
+              <div class="welfare-detail"><span class="label">Provider</span><span class="value">PMJJBY</span></div>
+              <div class="welfare-detail"><span class="label">Coverage</span><span class="value" style="color:var(--accent-secondary)">₹2,00,000</span></div>
+              <div class="welfare-detail"><span class="label">Premium</span><span class="value">₹436/year</span></div>
+              <div class="welfare-detail"><span class="label">Status</span><span class="value"><span class="status-badge active">Active</span></span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ====== WORKER REGISTRATION PAGE ====== -->
+        <div class="page-view" id="page-registration">
+          <div class="registration-layout">
+            <div class="registration-info">
+              <h2>Join <span class="text-gradient">WorkSphere</span> as a Service Provider</h2>
+              <p>Register with your Labour Cooperative Society and start earning with fair wages, insurance, and welfare benefits.</p>
+              <div class="reg-benefit">
+                <div class="reg-benefit-icon">✅</div>
+                <div>
+                  <h4>Verified Profile</h4>
+                  <p>Get verified through your cooperative society for customer trust</p>
+                </div>
+              </div>
+              <div class="reg-benefit">
+                <div class="reg-benefit-icon">💰</div>
+                <div>
+                  <h4>Fair Wages</h4>
+                  <p>Transparent pricing with no excessive commission cuts</p>
+                </div>
+              </div>
+              <div class="reg-benefit">
+                <div class="reg-benefit-icon">🛡️</div>
+                <div>
+                  <h4>Insurance & PF</h4>
+                  <p>Health insurance, accident cover, and provident fund</p>
+                </div>
+              </div>
+              <div class="reg-benefit">
+                <div class="reg-benefit-icon">📚</div>
+                <div>
+                  <h4>Skill Training</h4>
+                  <p>Free certification courses to upgrade your skills</p>
+                </div>
+              </div>
+            </div>
+            <div class="registration-form-card">
+              <div class="step-progress" id="regProgress">
+                <div class="step-dot active" data-step="1">1</div>
+                <div class="step-line"></div>
+                <div class="step-dot" data-step="2">2</div>
+                <div class="step-line"></div>
+                <div class="step-dot" data-step="3">3</div>
+              </div>
+
+              <!-- Step 1: Personal Info -->
+              <div class="form-step active" id="regStep1">
+                <h3 style="margin-bottom:var(--space-lg)">Personal Information</h3>
+                <div class="form-group">
+                  <label>Full Name <span class="required">*</span></label>
+                  <input type="text" class="form-input" placeholder="Enter your full name">
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label>Phone <span class="required">*</span></label>
+                    <input type="tel" class="form-input" placeholder="+91 XXXXX XXXXX">
+                  </div>
+                  <div class="form-group">
+                    <label>Aadhaar Number <span class="required">*</span></label>
+                    <input type="text" class="form-input" placeholder="XXXX XXXX XXXX">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Cooperative Society <span class="required">*</span></label>
+                  <select class="form-input">
+                    <option value="">Select your cooperative</option>
+                    <option>Karnataka Labour Cooperative Federation</option>
+                    <option>Tamil Nadu Workers Cooperative Society</option>
+                    <option>Maharashtra Labour Cooperative</option>
+                    <option>Kerala Cooperative Workers Federation</option>
+                    <option>Andhra Pradesh Labour Society</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Photo Upload</label>
+                  <div class="upload-area">
+                    <div class="upload-icon">📷</div>
+                    <p>Click to upload your photo</p>
+                  </div>
+                </div>
+                <button class="btn btn-primary btn-lg" style="width:100%" onclick="nextRegStep(2)">Continue →</button>
+              </div>
+
+              <!-- Step 2: Skills -->
+              <div class="form-step" id="regStep2">
+                <h3 style="margin-bottom:var(--space-lg)">Skills & Certification</h3>
+                <div class="form-group">
+                  <label>Primary Skill <span class="required">*</span></label>
+                  <select class="form-input">
+                    <option value="">Select primary skill</option>
+                    <option>Electrician</option>
+                    <option>Plumber</option>
+                    <option>Carpenter</option>
+                    <option>Painter</option>
+                    <option>Domestic Helper</option>
+                    <option>Caregiver</option>
+                    <option>Driver</option>
+                    <option>Gardener</option>
+                    <option>Cleaner</option>
+                    <option>Technician</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Years of Experience <span class="required">*</span></label>
+                  <input type="number" class="form-input" placeholder="e.g., 5" min="0">
+                </div>
+                <div class="form-group">
+                  <label>Certification Documents</label>
+                  <div class="upload-area">
+                    <div class="upload-icon">📄</div>
+                    <p>Upload ITI/Diploma certificates (PDF, JPG)</p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Additional Skills</label>
+                  <input type="text" class="form-input" placeholder="e.g., AC repair, solar panel, inverter">
+                </div>
+                <div style="display:flex;gap:var(--space-md)">
+                  <button class="btn btn-secondary btn-lg" style="flex:1" onclick="nextRegStep(1)">← Back</button>
+                  <button class="btn btn-primary btn-lg" style="flex:1" onclick="nextRegStep(3)">Continue →</button>
+                </div>
+              </div>
+
+              <!-- Step 3: Verification -->
+              <div class="form-step" id="regStep3">
+                <h3 style="margin-bottom:var(--space-lg)">Verification & Consent</h3>
+                <div class="form-group">
+                  <label>Bank Account Number <span class="required">*</span></label>
+                  <input type="text" class="form-input" placeholder="Enter bank account number">
+                </div>
+                <div class="form-group">
+                  <label>IFSC Code <span class="required">*</span></label>
+                  <input type="text" class="form-input" placeholder="SBIN0001234">
+                </div>
+                <div class="form-group">
+                  <label class="form-checkbox">
+                    <input type="checkbox">
+                    I agree to the WorkSphere Terms of Service and Cooperative Guidelines
+                  </label>
+                </div>
+                <div class="form-group">
+                  <label class="form-checkbox">
+                    <input type="checkbox">
+                    I consent to background verification through my cooperative society
+                  </label>
+                </div>
+                <div class="form-group">
+                  <label class="form-checkbox">
+                    <input type="checkbox">
+                    I agree to enroll in the welfare scheme (Insurance + PF)
+                  </label>
+                </div>
+                <div style="display:flex;gap:var(--space-md)">
+                  <button class="btn btn-secondary btn-lg" style="flex:1" onclick="nextRegStep(2)">← Back</button>
+                  <button class="btn btn-primary btn-lg" style="flex:1" onclick="submitRegistration()">Submit Application ✓</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ====== ADMIN DASHBOARD PAGE ====== -->
+        <div class="page-view" id="page-admin">
+          <div class="admin-header-cards">
+            <div class="federation-card">
+              <div class="icon">🏛️</div>
+              <div class="value">24</div>
+              <div class="label">Societies</div>
+            </div>
+            <div class="federation-card">
+              <div class="icon">👷</div>
+              <div class="value">12,547</div>
+              <div class="label">Total Workers</div>
+            </div>
+            <div class="federation-card">
+              <div class="icon">📋</div>
+              <div class="value">1,842</div>
+              <div class="label">Active Bookings</div>
+            </div>
+            <div class="federation-card">
+              <div class="icon">💰</div>
+              <div class="value">₹24.5L</div>
+              <div class="label">Monthly Revenue</div>
+            </div>
+            <div class="federation-card">
+              <div class="icon">⭐</div>
+              <div class="value">4.8</div>
+              <div class="label">Avg Rating</div>
+            </div>
+          </div>
+
+          <div class="chart-row">
+            <div class="chart-container">
+              <div class="chart-header">
+                <h3>📊 Federation Revenue Trend</h3>
+              </div>
+              <canvas class="chart-canvas" id="adminRevenueChart"></canvas>
+            </div>
+            <div class="chart-container">
+              <div class="chart-header">
+                <h3>👥 Worker Allocation by Skill</h3>
+              </div>
+              <canvas class="chart-canvas" id="adminWorkerChart"></canvas>
+            </div>
+          </div>
+
+          <div class="data-table-container">
+            <div class="table-header">
+              <h3>🏛️ Cooperative Societies Overview</h3>
+            </div>
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Society Name</th>
+                  <th>Location</th>
+                  <th>Workers</th>
+                  <th>Active Bookings</th>
+                  <th>Revenue (Month)</th>
+                  <th>Rating</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>Karnataka Labour Cooperative</strong></td><td>Bangalore</td><td>2,450</td><td>342</td><td>₹4.8L</td><td><span class="rating">⭐ 4.9</span></td></tr>
+                <tr><td><strong>Tamil Nadu Workers Society</strong></td><td>Chennai</td><td>1,890</td><td>287</td><td>₹3.6L</td><td><span class="rating">⭐ 4.7</span></td></tr>
+                <tr><td><strong>Maharashtra Labour Cooperative</strong></td><td>Mumbai</td><td>3,120</td><td>456</td><td>₹6.2L</td><td><span class="rating">⭐ 4.8</span></td></tr>
+                <tr><td><strong>Kerala Workers Federation</strong></td><td>Kochi</td><td>1,650</td><td>198</td><td>₹3.1L</td><td><span class="rating">⭐ 4.9</span></td></tr>
+                <tr><td><strong>AP Labour Society</strong></td><td>Hyderabad</td><td>2,100</td><td>312</td><td>₹4.2L</td><td><span class="rating">⭐ 4.6</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- ====== WORKERS MANAGEMENT PAGE ====== -->
+        <div class="page-view" id="page-workers-mgmt">
+          <div class="dashboard-cards">
+            <div class="dash-card">
+              <div class="dash-card-header"><div class="dash-card-icon green">👷</div></div>
+              <div class="value">12,547</div>
+              <div class="label">Total Workers</div>
+            </div>
+            <div class="dash-card">
+              <div class="dash-card-header"><div class="dash-card-icon purple">✅</div></div>
+              <div class="value">11,203</div>
+              <div class="label">Verified</div>
+            </div>
+            <div class="dash-card">
+              <div class="dash-card-header"><div class="dash-card-icon yellow">⏳</div></div>
+              <div class="value">892</div>
+              <div class="label">Pending Verification</div>
+            </div>
+            <div class="dash-card">
+              <div class="dash-card-header"><div class="dash-card-icon blue">🎓</div></div>
+              <div class="value">452</div>
+              <div class="label">In Training</div>
+            </div>
+          </div>
+          <div class="data-table-container">
+            <div class="table-header">
+              <h3>👥 Worker Management</h3>
+              <div style="display:flex;gap:var(--space-sm)">
+                <input type="text" class="form-input" style="width:200px;padding:8px 12px" placeholder="Search workers...">
+                <button class="btn btn-sm btn-primary">+ Add Worker</button>
+              </div>
+            </div>
+            <table class="data-table" id="workersMgmtTable">
+              <thead>
+                <tr>
+                  <th>Worker</th>
+                  <th>Skill</th>
+                  <th>Society</th>
+                  <th>Jobs Done</th>
+                  <th>Rating</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="workersMgmtBody">
+                <!-- Populated by JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- ====== AI FORECAST PAGE ====== -->
+        <div class="page-view" id="page-ai-forecast">
+          <div class="ai-forecast">
+            <div class="ai-forecast-header">
+              <div class="ai-badge">🤖 AI-Powered</div>
+              <h3 style="font-family:var(--font-display);font-weight:700">Demand Forecasting & Workforce Allocation</h3>
+            </div>
+            <p style="color:var(--text-secondary);margin-bottom:var(--space-xl)">AI-driven predictions for next 7 days based on historical data, weather, events, and seasonal trends.</p>
+            <div class="ai-forecast-grid" id="forecastGrid">
+              <div class="forecast-item">
+                <div class="service-name">⚡ Electrical</div>
+                <div class="demand-value" style="color:var(--accent-tertiary)">↑ High</div>
+                <div class="demand-change" style="color:var(--accent-tertiary)">+35% expected</div>
+                <div class="progress-bar" style="margin-top:8px"><div class="progress-fill" style="width:85%;background:var(--gradient-emergency)"></div></div>
+              </div>
+              <div class="forecast-item">
+                <div class="service-name">🔧 Plumbing</div>
+                <div class="demand-value" style="color:var(--accent-warning)">↗ Medium</div>
+                <div class="demand-change" style="color:var(--accent-warning)">+12% expected</div>
+                <div class="progress-bar" style="margin-top:8px"><div class="progress-fill" style="width:62%"></div></div>
+              </div>
+              <div class="forecast-item">
+                <div class="service-name">🧹 Cleaning</div>
+                <div class="demand-value" style="color:var(--accent-secondary)">→ Stable</div>
+                <div class="demand-change" style="color:var(--accent-secondary)">+2% expected</div>
+                <div class="progress-bar" style="margin-top:8px"><div class="progress-fill" style="width:45%;background:linear-gradient(90deg,var(--accent-secondary),var(--accent-secondary-light))"></div></div>
+              </div>
+              <div class="forecast-item">
+                <div class="service-name">🎨 Painting</div>
+                <div class="demand-value" style="color:var(--accent-tertiary)">↑ High</div>
+                <div class="demand-change" style="color:var(--accent-tertiary)">+28% expected</div>
+                <div class="progress-bar" style="margin-top:8px"><div class="progress-fill" style="width:78%;background:var(--gradient-emergency)"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="chart-row">
+            <div class="chart-container">
+              <div class="chart-header">
+                <h3>🤖 AI Demand Forecast (Next 7 Days)</h3>
+              </div>
+              <canvas class="chart-canvas" id="forecastChart"></canvas>
+            </div>
+            <div class="chart-container">
+              <div class="chart-header">
+                <h3>👥 Workforce Allocation Suggestion</h3>
+              </div>
+              <div id="allocationSuggestions" style="padding-top:var(--space-sm)">
+                <div class="schedule-item" style="margin-bottom:var(--space-sm)">
+                  <div style="flex:1">
+                    <h4 style="font-size:0.9rem">⚡ Electrical — Reallocate +15 workers</h4>
+                    <p style="font-size:0.8rem;color:var(--text-muted)">Festival season causing surge in electrical work demand</p>
+                  </div>
+                  <button class="btn btn-sm btn-primary">Apply</button>
+                </div>
+                <div class="schedule-item" style="margin-bottom:var(--space-sm)">
+                  <div style="flex:1">
+                    <h4 style="font-size:0.9rem">🎨 Painting — Reallocate +8 workers</h4>
+                    <p style="font-size:0.8rem;color:var(--text-muted)">Pre-festival home renovation trend detected</p>
+                  </div>
+                  <button class="btn btn-sm btn-primary">Apply</button>
+                </div>
+                <div class="schedule-item" style="margin-bottom:var(--space-sm)">
+                  <div style="flex:1">
+                    <h4 style="font-size:0.9rem">🚗 Driving — Reduce -5 workers</h4>
+                    <p style="font-size:0.8rem;color:var(--text-muted)">Lower demand expected due to public holiday</p>
+                  </div>
+                  <button class="btn btn-sm btn-outline">Review</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ====== REPORTS PAGE ====== -->
+        <div class="page-view" id="page-reports">
+          <div class="dashboard-cards">
+            <div class="dash-card">
+              <div class="dash-card-header"><div class="dash-card-icon green">💰</div></div>
+              <div class="value" style="color:var(--accent-secondary)">₹24.5L</div>
+              <div class="label">Monthly Revenue</div>
+              <div class="trend up">↑ 18% growth</div>
+            </div>
+            <div class="dash-card">
+              <div class="dash-card-header"><div class="dash-card-icon purple">📋</div></div>
+              <div class="value">8,542</div>
+              <div class="label">Monthly Bookings</div>
+              <div class="trend up">↑ 24% growth</div>
+            </div>
+            <div class="dash-card">
+              <div class="dash-card-header"><div class="dash-card-icon blue">🔁</div></div>
+              <div class="value">67%</div>
+              <div class="label">Repeat Customers</div>
+              <div class="trend up">↑ 5%</div>
+            </div>
+            <div class="dash-card">
+              <div class="dash-card-header"><div class="dash-card-icon pink">🛡️</div></div>
+              <div class="value">₹2.1L</div>
+              <div class="label">Welfare Disbursed</div>
+            </div>
+          </div>
+          <div class="chart-container">
+            <div class="chart-header">
+              <h3>📈 Monthly Performance Report</h3>
+            </div>
+            <canvas class="chart-canvas" id="reportsChart"></canvas>
+          </div>
+        </div>
+
+        <!-- ====== RATINGS PAGE ====== -->
+        <div class="page-view" id="page-ratings">
+          <div class="dashboard-cards" style="grid-template-columns:repeat(3,1fr)">
+            <div class="dash-card">
+              <div class="value" style="color:var(--accent-warning);font-size:2.5rem">4.8 ★</div>
+              <div class="label">Overall Platform Rating</div>
+            </div>
+            <div class="dash-card">
+              <div class="value">85,420</div>
+              <div class="label">Total Reviews</div>
+            </div>
+            <div class="dash-card">
+              <div class="value" style="color:var(--accent-secondary)">94%</div>
+              <div class="label">Satisfaction Rate</div>
+            </div>
+          </div>
+          <h3 style="margin-bottom:var(--space-lg)">Recent Reviews</h3>
+          <div id="reviewsList">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+
+        <!-- ====== MAP VIEW PAGE ====== -->
+        <div class="page-view" id="page-map-view">
+          <div class="map-container" style="height:calc(100vh - 160px)">
+            <div class="map-placeholder">
+              <div class="map-grid-lines"></div>
+              <div class="map-pin worker-pin" style="top:20%;left:15%"><span class="pin-label">Suresh - Electrician</span></div>
+              <div class="map-pin worker-pin" style="top:35%;left:30%"><span class="pin-label">Priya - Cleaner</span></div>
+              <div class="map-pin worker-pin" style="top:15%;left:55%"><span class="pin-label">Ravi - Plumber</span></div>
+              <div class="map-pin worker-pin" style="top:50%;left:70%"><span class="pin-label">Meena - Caregiver</span></div>
+              <div class="map-pin worker-pin" style="top:65%;left:25%"><span class="pin-label">Kumar - Carpenter</span></div>
+              <div class="map-pin worker-pin" style="top:75%;left:55%"><span class="pin-label">Anita - Painter</span></div>
+              <div class="map-pin worker-pin" style="top:40%;left:45%"><span class="pin-label">Deepak - Driver</span></div>
+              <div class="map-pin worker-pin" style="top:55%;left:85%"><span class="pin-label">Lakshmi - Gardener</span></div>
+              <div class="map-pin worker-pin" style="top:30%;left:75%"><span class="pin-label">Arjun - Technician</span></div>
+              <div class="map-pin" style="top:45%;left:50%"><span class="pin-label">📍 Your Location</span></div>
+              <div class="map-overlay-info">
+                <h4>🗺️ Live Worker Map</h4>
+                <p>9 workers available nearby</p>
+                <p style="margin-top:4px;color:var(--accent-secondary);font-weight:600">Real-time geo-tracking</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
